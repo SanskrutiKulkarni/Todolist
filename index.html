@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewpoint" content="width=device-width, initial-scale=1">
+    <title> To Do List Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>To Do List</h2>
+            <input type="text" placeholder="Write here..." id="inputBx">
+            <ul id="list"></ul>
+        </div>
+    </div>
+    <script>
+        let inputBx = document.querySelector('#inputBx');
+        let list = document.querySelector('#list');
+    
+        inputBx.addEventListener("keyup", function (event) {
+            if (event.key == "Enter") {
+                addItem(this.value)
+                this.value = ""
+            }
+        })
+    
+        let addItem = (inputText) => {
+            let listItem = document.createElement("li");
+    
+            // Create a div for the text content
+            let textDiv = document.createElement("div");
+            textDiv.textContent = inputText;
+            textDiv.classList.add("text-content"); // Add a class for styling
+    
+            // Create a div for the cross symbol
+            let crossDiv = document.createElement("div");
+            crossDiv.innerHTML = `<i></i>`;
+            crossDiv.classList.add("cross-symbol"); // Add a class for styling
+    
+            listItem.appendChild(textDiv);
+            listItem.appendChild(crossDiv);
+    
+            listItem.addEventListener("click", function () {
+                this.classList.toggle('done'); // Toggle the 'done' class on click
+            });
+    
+            crossDiv.addEventListener("click", function () {
+                listItem.remove();
+            });
+    
+            list.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>
+
+
+

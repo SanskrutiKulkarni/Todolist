@@ -1,0 +1,150 @@
+*{
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-sarif;
+}
+ 
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height:100vh;
+    background-image:url('background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.box{
+    height:500px;
+    width:650px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin:auto;
+    margin-top:7%;
+    border-radius:20px;
+    background:#cb089d8a;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0);
+}
+
+h2{
+    width: 100%;
+    font-weight: 600;
+    text-align:center;
+    color:#fff;
+    font-size: 1.75em;
+    margin-bottom:10px;
+}
+#inputBx{
+    position:relative;
+    width: 550px;
+    outline:none;
+    padding:15px 20px;
+    border-radius:30px;
+    font-size:1em;
+    box-shadow:0px 4px 8px 0 rgb(0, 0 ,0);
+}
+.box li{
+    position:relative;
+    width:500px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    background: #08cb8d8a;
+    margin:15px 0;
+    padding: 10px 10px 10px 45px;
+    min-height: 45px;
+    cursor: pointer;
+    border-radius: 22.5px;
+    color:#fff;
+    box-shadow: 5px 5px 7px rgba(0,0,0,0.25), inset 2px 2px 5px rgba(0,0,0,0.5), inset -3px -3px 5px rgba(0,0,0,0.5);
+
+}
+
+.box li i {
+    position: absolute;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Make it a circle */
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25), inset 2px 2px 5px rgba(0, 0, 0, 0.5), inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.box li i::before {
+    content: '✕'; /* Cross (X) symbol */
+    font-size: 20px; /* Adjust the size of the cross symbol */
+    color: #fff; /* White color for the cross symbol */
+}
+
+.box li.done::after {
+    content: '';
+    position: absolute;
+    left: 10px;
+    width: 12px;
+    height: 2px;
+    background: #fff;
+    transform: rotate(45deg); /* Corrected value here */
+    top: 50%;
+    transform-origin: center;
+}
+.box li::before{
+ content:'';
+ position: absolute;
+ left: 8px;
+ width:30px;
+ background:#2f363e;
+ border-radius:50%;
+}
+
+.box li.done{
+    background:#084fcb8a;
+
+}
+.box li.done::after{
+    content:'';
+    position:absolute;
+    left:10px;
+    width:12px;
+    height:6px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform : rotate(200degree);
+}
+
+#list{
+ position:relative;
+ margin-top:20px;
+ height:350px;
+ overflow-y: auto;
+ padding-right: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Horizontal scrollbar */
+::-webkit-scrollbar-horizontal {
+    height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff;
+}
+
+.text-content {
+    flex-grow: 1; /* Take up remaining space */
+}
+
+.cross-symbol {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: red; 
+    margin-left: 10px; /* Add margin to separate from text content */
+}
